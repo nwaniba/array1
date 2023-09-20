@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <style>
+        /* CSS styles go here */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        #quoteContainer {
+            padding: 20px;
+            border: 1px solid #eeeeee;
+            background-color: #1e0e13;
+            border-top-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            width: 40%;
+            height: fit-content;
+            color: #fff;
+            font-size: 25px;
+        }
+        #generate-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="quoteContainer">
+        <p id="quote">Loading... </p>
+        <p><button id="generate-button" onclick="generateQuote">Generate New Quote</button></p>
+    </div>
+    
+    <script>
+        // JavaScript code goes here
+        let quotes = ["“Friends are the family we choose.”","“Kindness is one thing you can’t give away. It always comes back.”","“Try to be a rainbow in someone else’s cloud.” ", "“Happiness is not by chance but by choice.”","“The most important thing is to try and inspire people so that they can be great in whatever they want to do.”", "“Each day comes bearing its gifts. Untie the ribbon.” ", "“If you don’t like the road you’re walking, start paving another one.”", "“A dead end is just a good place to turn around.”", "“Even miracles take a little time”", "“Always let your conscience be your guide.”","“If it wasn’t hard, everyone would do it. It’s the hard that makes it great.”", "“Optimism is a happiness magnet. If you stay positive good things and good people will be drawn to you.” ", "“Speak your mind, even if your voice shakes.”", "“Live life to the fullest, and focus on the positive.”", "“You’ll never do a whole lot unless you’re brave enough to try.”", "“Know what sparks the light in you. Then use that light to illuminate the world.”", "“The greatest glory in living lies not in never failing, but in rising every time we fail.”","“Don’t waste a minute not being happy. If one window closes, run to the next window—or break down a door.”", "“The way I see it, if you want the rainbow, you gotta put up with the rain!”", "“We cannot direct the wind, but we can adjust the sails.” "];
+
+        let backgroundColor = ["#C0C0C0","#808080","#E9967A", "#808000", "#FF00FF", "#00FF00", "#FF1493", "#DB7093", "#FFA500", "#FFDAB9"];
+
+        let randomQuote = Math.floor(Math.random() * 19) + 1;
+        let quote = document.getElementById("quote");
+        let randomColor = Math.floor(Math.random() * 9) + 1;
+        let btn = document.getElementById("generate-button")
+        let content = document.getElementById("quoteContainer")
+        
+        
+      
+
+        for (let i = 0; i < 20; i++) {
+           const element = quotes[randomQuote];
+           const element1 = backgroundColor[randomColor];
+           quote.innerHTML = element;
+           quoteContainer.style.backgroundColor = element1;
+           break;
+        }
+        btn.addEventListener("click", display);
+        function display(randomColor) {
+            location.reload();
+        }
+    </script>
+</body>
+</html>
